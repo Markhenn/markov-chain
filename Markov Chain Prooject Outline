@@ -1,0 +1,12 @@
+Markov Chain Prooject Outline 
+
+
+
+Planning of the prgramm parts
+
+1) input which book they want an excerpt from
+1.1) how many excerpts
+2) fetch data from that book
+3) generate markov chain
+4) get data from chain based on how many they want
+5) present the data formated
