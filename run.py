@@ -26,21 +26,29 @@ mc = MarkovChain()
 
 
 #this is the starter function
-def start_here():
-	return
+def start_here():	
+	while True:
+		print "Welcome to the Markov Chain Programm \nHere you can get random passages from Goethes Werther"
+		passeges = int(raw_input("How many passeges (1-5) would you like to read? "))
+		if passeges < 6 and passeges > 0:
+			#create the raw text from project gutenberg
+			url = "http://www.gutenberg.org/files/2527/2527-h/2527-h.htm"
+			raw_text = fetch_data.fetch_data(url)
+			#create markov text
+			mc.add_string(raw_text)
+			for x in range(passeges):
+				#create markov string
+				string_list = mc.generate_text()
+				print "Passage %d:\n" %(x+1) + " ".join(string_list)
+			return 
+		else:
+			print "Please choose a number between 1 and 5"
 
-#function to format data
-def format_text():
-	return
 
 
-#create the raw text from project gutenberg
-url = "http://www.gutenberg.org/files/2527/2527-h/2527-h.htm"
-raw_text = fetch_data.fetch_data(url)
+	
 
 
+print start_here()
 
-# RnD a string from the internet to add here
-mc.add_string(raw_text)
-print mc.generate_text()
-print mc.generate_text()
+
